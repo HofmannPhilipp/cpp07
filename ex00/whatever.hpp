@@ -6,33 +6,37 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 14:21:53 by phhofman          #+#    #+#             */
-/*   Updated: 2025/09/09 14:42:22 by phhofman         ###   ########.fr       */
+/*   Updated: 2025/09/11 10:12:26 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template <typename T>
-void swap(T &a, T &b)
+namespace whatever
 {
-    T temp = a;
 
-    a = b;
-    b = temp;
-}
+    template <typename T>
+    void swap(T &a, T &b)
+    {
+        T temp = a;
 
-template <typename T>
-T min(T a, T b)
-{
-    if (a < b)
-        return a;
-    return b;
-}
+        a = b;
+        b = temp;
+    }
 
-template <typename T>
-T max(T a, T b)
-{
-    if (a > b)
-        return a;
-    return b;
+    template <typename T>
+    const T &min(const T &a, const T &b)
+    {
+        if (a < b)
+            return a;
+        return b;
+    }
+
+    template <typename T>
+    const T &max(const T &a, const T &b)
+    {
+        if (a > b)
+            return a;
+        return b;
+    }
 }
